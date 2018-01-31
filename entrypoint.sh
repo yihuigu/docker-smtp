@@ -36,7 +36,7 @@ fi
 if [ "$GMAIL_USER" -a "$GMAIL_PASSWORD" ]; then
 	opts+=(
 		dc_eximconfig_configtype 'smarthost'
-		dc_smarthost 'smtp.gmail.com::587'
+		dc_smarthost 'aspmx.l.google.com::25'
 	)
 	echo "*.google.com:$GMAIL_USER:$GMAIL_PASSWORD" > /etc/exim4/passwd.client
 elif [ "$SES_USER" -a "$SES_PASSWORD" ]; then
